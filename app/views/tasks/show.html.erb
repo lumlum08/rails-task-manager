@@ -1,0 +1,13 @@
+<h1> <%= @task.title %> <%= link_to "Edit a Task", edit_path %> </h1>
+
+<p><%= @task.details%></p>
+
+<%# mettre ici c'est  la tache est accomplit %>
+<% if @task.completed? %>
+<%= "[X] This task is completed" %>
+<% else %>
+<%= "[ ] This task is not completed yet" %>
+<% end %>
+
+
+<%= link_to "delete", tasks_path(@task), method: :delete, data: {confirm: "Are you Sure ?"} %>
